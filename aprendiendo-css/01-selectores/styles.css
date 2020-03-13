@@ -1,0 +1,88 @@
+/* selectores
+
+-las hojas css se leen de arriba a abajo
+-y predomina el ultimo estilo aplicado a un elemento
+-el selector id esta pensado para un unido elemento
+-el selector clase esta pensado para mas de un elemento
+-el estilo con mas especificidad tiene mas prioridad y
+no importa la ubicacion que tenga en la hoja de estilos,
+esto no aplica si se utiliza !important
+*/
+
+/* selector universal */
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* margin: 0px;
+    padding: 0px; */
+}
+
+/* selector de etiqueta */
+a {
+    color: chartreuse;
+}
+
+footer a {
+    color: coral;
+}
+
+/* selector de id */
+
+#descripcion {
+
+    border: 5px solid coral;
+    padding: 10px;
+}
+
+/* selector de clase */
+
+.parrafo{
+    border: 5px solid blue;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.parrafo1 {
+    background: pink;
+}
+
+/* selector de atributo */
+
+#usuario form {
+    border: 5px solid green;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+ form * {
+    display: block;
+}
+
+input[type="text"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    width:300px;
+}
+
+input[type="submit"] {
+    background:green;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+/* selector hijo  */
+#menu > li > a{
+    color: red;
+}
+
+/* prioridad  */
+#saludo h1 {
+    background: seagreen;
+}
+
+h1 {
+    background: purple !important;
+}

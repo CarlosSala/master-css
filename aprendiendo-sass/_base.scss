@@ -1,0 +1,127 @@
+// Variables
+$fuente-tipica: sans-serif,
+Helvetica,
+Arial;
+$color-fondo: #ccc;
+$color-secundario: rgb(102, 33, 33);
+
+// Uso de variables
+body {
+    background-color: $color-fondo;
+}
+
+h1 {
+    font-family: $fuente-tipica;
+    color: $color-secundario;
+}
+
+// Anidacion
+.caja {
+
+    border: 1px solid black;
+    width: 500px;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+
+    h1 {
+        color: blue;
+    }
+
+    p {
+        color: green;
+    }
+
+    .info {
+        font-size: 10px;
+
+        .author {
+            font-size: 15px;
+            color: orange;
+        }
+    }
+}
+
+// Mixins / funciones
+@mixin crearBordes($color, $size, $shadow) {
+
+    border: $size solid $color;
+    border-radius: $size;
+    box-shadow: 0px 0px $size $shadow;
+}
+
+.caja {
+    @include crearBordes(red, 10px, black);
+}
+
+.listado {
+    @include crearBordes(green, 20px, yellow);
+}
+
+// Herencia
+%alert-normal {
+    border: 1px solid gray;
+    background: #eee;
+    color: gray;
+    padding: 10px;
+    width: 80%;
+    margin: 20px;
+}
+
+.alert {
+    @extend %alert-normal;
+}
+
+.alert-danger {
+    @extend %alert-normal;
+    color: red;
+    border-color: red;
+}
+
+.alert-success {
+    @extend %alert-normal;
+    color: green;
+    border-color: green;
+}
+
+// Operadores
+h1 {
+    font-size: 20px + 5px - 1px;
+}
+
+.caja {
+    width: 500px / 1920px * 100%;
+}
+
+// Condicionales 
+$color-fondo:black;
+
+h1 {
+    @if $color-fondo==#ccc {
+        color: black;
+    }
+
+    @else if $color-fondo==black {
+        color: lightcoral;
+    }
+
+    @else {
+        color: lightgreen;
+    }
+}
+
+// For 
+$contador : 1;
+
+@for $contador from 1 through 10 {
+    .listado ul li:nth-child(#{$contador}) {
+        font-size: $contador + 10px * 2;
+        color: yellow;
+    }
+}
+
+
+// Each
+
+
+// // While
