@@ -1,274 +1,327 @@
 * {
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
 }
 
 #container {
-    width: 90%;
-    height: auto;
-    margin: 0px auto;
-    border: 1px rgba(225, 225, 226, 0.8);
-    box-shadow: 0px 0px 10px #ccc;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
-    min-height: 600px;
+  width: 90%;
+  height: auto;
+  margin: 0px auto;
+  border: 1px rgba(225, 225, 226, 0.8);
+  box-shadow: 0px 0px 10px #ccc;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 600px;
 }
 
+/* el header contiene dos elementos, un logo y un menu */
 #header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+  /* ocupa todo el ancho de la pantalla disponible */
+  display: flex;
+  /* las posiciones de las cajas en forma de fila */
+  flex-direction: row;
+  /* para que los elementos se adapten y no se salgan de la caja principal */
+  flex-wrap: wrap;
+  /* alinear los elementos verticalmente en el centro */
+  align-items: center;
 
-    height: 120px;
-    border-bottom: 1px rgba(225, 225, 226, 0.8);
-    margin-bottom: 40px;
+  height: 120px;
+  border-bottom: 1px rgba(225, 225, 226, 0.8);
+  margin-bottom: 40px;
 }
 
 .logo {
-    flex-grow: 1;
-    flex-basis: 65%;
+  /* border: 1px solid black; */
+  /* puede crecer hasta uasar el 100% del ancho */
+  flex-grow: 1;
+  /* ancho minimo */
+  flex-basis: 65%;
 
-    font-family: Helvetica;
-    font-style: Italic;
-    font-weight: 900;
-    font-size: 35px;
+  font-family: Helvetica;
+  font-style: Italic;
+  font-weight: 900;
+  font-size: 35px;
 
-    padding: 10px;
-    margin-left: 20px;
-    color: black;
-    text-shadow: 1px 1px 0px #ccc;
-    text-transform: uppercase;
+  padding: 10px;
+  margin-left: 20px;
+  color: black;
+  text-shadow: 1px 1px 0px #ccc;
+  text-transform: uppercase;
 }
 
 .logo h1 {
-    font-family: Helvetica;
-    font-style: Italic;
-    font-weight: 900;
-    font-size: 35px;
+  font-size: 35px;
 }
 
 #menu {
-    flex-grow: 1;
-    flex-basis: 30%;
-    height: 100%;
-    padding-right: 20px;
+  /* border: 1px solid black; */
+  /* puede crecer hasta uasar el 100% del ancho */
+  flex-grow: 1;
+  /* ancho minimo */
+  flex-basis: 30%;
+  height: 100%;
+  padding-right: 20px;
 }
 
-#menu>ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+#menu > ul {
+  /* los ul usaran todo el ancho que tengan disponible */
+  display: flex;
+  /* se ubican en fila */
+  flex-direction: row;
+  /* no se desbordarán de su contenedor */
+  flex-wrap: wrap;
+  /* se alinean al centro verticalmente */
+  align-items: center;
+  /* el primero y el ultimo van a tope y el resto se reparte el espacio */
+  justify-content: space-between;
 
-
-    height: 100%;
-    list-style: none;
+  height: 100%;
+  list-style: none;
 }
 
 #menu a {
-    text-transform: uppercase;
-    color: #444;
-    padding: 15px;
-    transition: all 300ms;
+  text-transform: uppercase;
+  color: #444;
+  transition: all 300ms;
 }
 
 #menu a:hover {
-    background: #ccc;
-    color: white;
+  background: #ccc;
+  color: white;
 }
 
+/* content contiene dos elementos, un aside con id=aside y 
+un div con id= projects */
 #content {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  /* ocupa todo el ancho de la pantalla disponible */
+  display: flex;
+  /* el primero y el ultimo van a tope y el resto se reparte el espacio */
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #projects {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    flex-basis: 80%;
+  /* border: 1px solid black; */
+  /* ocupa todo el ancho de la pantalla disponible */
+  display: flex;
+  /* se ubican en fila  y no se desbordarán de su contenedor */
+  flex-flow: row wrap;
+  /* el primero y el ultimo van a tope y el resto se reparte el espacio */
+  justify-content: space-between;
+  /* ancho minimo */
+  flex-basis: 80%;
 }
 
 .project {
-    flex-grow: 1;
-    flex-basis: 200px;
-    margin-bottom: 25px;
-    margin-right: 20px;
-    border: 1px solid #ccc;
+  /* puede crecer hasta uasar el 100% del ancho */
+  flex-grow: 1;
+  /* ancho minimo */
+  flex-basis: 200px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
 }
 
 .project img {
-    width: 100%;
+  width: 100%;
 }
 
 .project-info a {
-    font-size: 16px;
-    color: black;
-    transition: all 300ms;
+  font-size: 16px;
+  color: black;
+  transition: all 300ms;
+  margin-left: 5px;
 }
 
 .project-info a:hover {
-    color: green;
-}
-
-.project-info p {
-    font-size: 16px;
-    color: gray;
+  color: blue;
 }
 
 #aside {
-    /* order: 2; */
-    flex-basis: 15%;
-    margin-right: 30px;
-    padding: 15px;
-
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  /* border: 1px solid black; */
+  /* order: 2; */
+  /* ancho minimo */
+  flex-basis: 15%;
+  /* ocupa todo el ancho de la pantalla disponible */
+  display: flex;
+  /* se ubican en columnas */
+  flex-direction: column;
+  /* no se desbordarán de su contenedor */
+  flex-wrap: wrap;
+  margin-right: 30px;
+  padding: 15px;
 }
 
 #aside h2 {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 100;
-    color: #444;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(225, 225, 226, 0.8);
-    text-align: center;
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 100;
+  color: #444;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+  text-align: center;
 }
 
 #aside ul {
-    list-style: none;
+  list-style: none;
 }
 
 #aside ul li {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 #aside a {
-    display: block;
-    padding: 20px;
-    background: #eee;
-    color: #444;
-    text-align: center;
-    text-transform: uppercase;
-    transition: all 300ms;
+  display: block;
+  padding: 20px;
+  background: #eee;
+  color: #444;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 300ms;
 }
 
 #aside a:hover {
-    background: #444;
-    color: #eee;
+  background: #444;
+  color: #eee;
 }
 
+/* el footer tiene dos elementos, un logo e info */
 #footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-
-
-    height: 120px;
-    align-items: center;
-    border-top: 1px solid rgba(225, 225, 226, 0.8);
+  /* ocupa todo el ancho disponible */
+  display: flex;
+  /* sus elementos se ubican en fila y no se desbordan del contenedor */
+  flex-flow: row wrap;
+  /* alineacion vertical centrada */
+  align-items: center;
+  height: 120px;
+  border-top: 1px solid rgba(225, 225, 226, 0.8);
 }
 
 #footer .logo {
-    opacity: 0.5;
-    flex-basis: auto;
-    flex-grow: 1;
-    order: 2;
-    text-align: right;
-    margin-right: 20px;
+  /* border: 1px solid black; */
+  opacity: 0.5;
+  /* ancho minimo automatico */
+  flex-basis: auto;
+  /* puede crecer hasta uasar el 100% del ancho */
+  flex-grow: 1;
+  /* esta en la segunda posicion */
+  order: 2;
+  text-align: right;
+  margin-right: 20px;
 }
 
 #footer .info {
-    flex-grow: 1;
-    order: 1;
-    margin-left: 20px;
-    color: #444;
+  /* border: 1px solid black; */
+  /* puede crecer hasta uasar el 100% del ancho */
+  flex-grow: 1;
+  /* esta en la primera posicion */
+  order: 1;
+  margin-left: 20px;
+  color: #444;
 }
 
 @media (max-width: 1505px) {
-    #menu a {
-        padding: 8px;
-    }
+  #menu a {
+    padding: 8px;
+  }
 }
 
 @media (max-width: 1334px) {
-    #header {
-        text-align: center;
-    }
+  #header {
+    text-align: center;
+  }
 
-    #menu>ul {
+  #menu > ul {
+    align-items: flex-start;
+    justify-content: space-evenly;
 
-        align-items: flex-start;
-        justify-content: space-evenly;
+    height: 100%;
+    margin-top: 20px;
+    list-style: none;
+  }
+}
 
+/* la anchura de la pantalla se comienza a reducir y
+cuando alcanza los 759px se aplican los sigtes estilos */
 
-        height: 100%;
-        margin-top: 20px;
-        list-style: none;
-    }
+@media (max-width: 1165px) {
+  #aside > h2 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 985px) {
+  #aside > h2 {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 878px) {
+  #aside > h2 {
+    font-size: 12px;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 759px) {
 
-    #footer .logo {
-        flex-grow: 1;
-        order: 1;
-        margin-left: 20px;
-        color: #444;
-        flex-basis: 100%;
-        text-align: center;
-        margin: 0px;
-    }
+  #aside > h2 {
+    font-size: 20px;
+  }
 
-    #footer .info {
-        flex-grow: 1;
-        order: 2;
-        margin-left: 20px;
-        color: #444;
-        flex-basis: 100%;
-        text-align: center;
-        margin: 0px;
-    }
+  #footer .logo {
+    flex-grow: 1;
+    order: 1;
+    margin-left: 20px;
+    color: #444;
+    flex-basis: 100%;
+    text-align: center;
+    margin: 0px;
+  }
 
-    #content {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+  #footer .info {
+    flex-grow: 1;
+    order: 2;
+    margin-left: 20px;
+    color: #444;
+    flex-basis: 100%;
+    text-align: center;
+    margin: 0px;
+  }
 
-    #aside {
-        margin-right: 0px;
-    }
+  #content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
-    #aside ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
+  #aside {
+    margin-right: 0px;
+  }
 
-    #aside ul li {
-        flex-grow: 1;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  #aside ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 
-    .project {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
+  #aside ul li {
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .project {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }

@@ -1,55 +1,55 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 ul li {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 ul li:first-child {
-    color: green;
-    font-weight: bold;
+  color: green;
+  font-weight: bold;
 }
 
 ul li:nth-child(2) {
-    color: yellow;
-    font-weight: bold;
+  color: orangered;
+  font-weight: bold;
 }
 
-ul li:last-child{
-    color: teal;
+ul li:last-child {
+  color: teal;
 }
 
 #mi-enlace {
-    font-size: 20px;
-    color: lightsalmon;
+  font-size: 20px;
+  color: lightsalmon;
 }
 
 #mi-enlace:link {
-    color: red;
+  color: red;
 }
 
-#mi-enlace:visited{
-    color: maroon;
+#mi-enlace:visited {
+  color: maroon;
 }
 
 #mi-enlace:hover {
-    color: blue;
+  color: blue;
 }
 
 #mi-enlace:active {
-    color:yellow;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: yellow;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-input[type="text"]{
-    margin-top: 20px;
-    padding: 10px;
+input[type="text"] {
+  margin-top: 20px;
+  padding: 10px;
 }
 
 input[type="text"]:focus {
-    border: 4px dashed red;
+  border: 4px dashed greenyellow;
 }

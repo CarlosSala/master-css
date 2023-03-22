@@ -1,0 +1,8 @@
+// se puede compilcar este archivo e incluir varios modulos
+// con el comando: sass --watch styles.scss styles.css
+// el archivo .map se crea automaticamente
+
+// Modulos
+
+@use '_base';
+@use '_encabezado';

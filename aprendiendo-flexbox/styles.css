@@ -1,91 +1,137 @@
-/* flexbox solo actua donde se le indique  */
+/* flexbox o cajas flexibles, es una alternativa a la maquetacion
+ con floats, flexbox necesita de una caja que contenga todo para actuar
+ flexbox no necesita instalar nada, viene incluido en css */
+
+/* 
+display: flex; ocupa el 100% del ancho de la pantalla
+display: inline-flex; el ancho se adapta a su contenido es como un width auto */
+
+/*
+ Direcciones -> flex-direction:
+ las posiciones de las cajas pueden ser:
+ -row (viene por defecto)
+ -columm
+ -row-reverse (invierte de las cajas de la fila)
+ -column-reverse (invierte las cajas de la columna)
+  */
+/* 
 #layout {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid black;
+  padding: 5px;
+} */
 
-    /* display: flex; ocupa el 100% del ancho de la pantalla  */
-    /* display: inline-flex; el ancho se adapta a su contenido */
-    display: flex;
-    /* posiciones de las cajas row, columm, row-reverse, column-reverse */
-    /* flex-direction: row; */
-    /* wrap, para que los elementos se adapten al tamaño del layout
-    y no se salgan de la caja generando un scroll horizontal */
-    /* flex-wrap: wrap; */
+/* envoltorio en flexbox (wrap) */
 
-    /* flex-flow: row wrap; une flex-direction y flex-wrap  */
-    flex-flow: row wrap;
+/* 
+flex-wrap: para que los elementos se adapten al tamaño del layout
+y no se salgan de la caja principal generando un scroll horizontal */
 
-    /* par alinear el contenido horizontal */
-    /* justify-content: flex-start; */
-    ;
-    /* justify-content: left; */
-    /* justify-content: flex-end; */
-    /* justify-content: right; */
-    /* justify-content: center; */
-    /* justify-content: space-around; */
-    /* justify-content: space-between; */
+/* #layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 3px solid black;
+  padding: 5px;
+} */
 
-    height: 600px;
+/* flex-flow: junta flex-direction y flex-wrap en una sola instruccion */
+/* flex-flow: row wrap; */
 
-    /* alinear contenido vertical */
-    /* align-items: baseline; */
-    /* align-items: center; */
-    /* align-items: flex-start; */
-    /* align-items: flex-end; */
+/* #layout {
+  display: flex;
+  border: 3px solid black;
+  padding: 5px;
+  flex-flow: row wrap;
+} */
 
-    border: 3px solid black;
-    padding: 5px;
-}
+/* order: la propiedad order reordena las cajas segun el numero que se
+le asigne a cada una, el numero mas bajo va primero */
 
-p {
-    text-align: center;
-}
+/* 
+flex-grow: especifica a cada elemento cuanto puede crecer y cuanto 
+espacio va a utilizar dentro del contenedor de flexbox, es como
+distribuir el espacio dentro de la caja */
+
+/* flex-basis: es similar a usar min-width: 25%; permite asignar un tamaño
+  minimo a los elementos dentro de la caja principal */
+
+/* #layout {
+  display: flex;
+  border: 3px solid black;
+  padding: 5px;
+  flex-flow: row wrap;
+} */
 
 .caja {
+  /* con el valor 1 todas las cajas ocupan el mismo espacio */
+  /* flex-grow: 1;  */
 
-    /* con el valor 1 todas las cajas ocupan el mismo espacio,
-    esta propiedad indica cuanto puede crecer un elemento */
-    /* flex-grow: 1; */
-
-    /* similar a usar width: 25%; , permite asignar un tamaño minimo */
-    /* flex-basis: 25%; */
-
-
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    padding: 26px;
-    border: 4px solid #222;
-    margin: 10px;
-    background: gray;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  padding: 26px;
+  border: 4px solid #222;
+  margin: 10px;
+  background: gray;
 }
 
 .red {
-    background-color: red;
-    /* order: 3; */
-    /* flex-grow: 5; */
-    /* flex-basis: calc(100% / 4); */
-    align-self: flex-start;
+  background-color: red;
+  /* order: 3; */
+  /* flex-grow: 5; */
+  /* flex-basis: calc(100% / 4); */
+  align-self: flex-start;
 }
 
 .green {
-    /* order: 2; */
-    background-color: green;
-    /* flex-grow: 3; */
-   align-self: center;
+  background-color: green;
+  /* order: 2; */
+  /* flex-grow: 10; */
+  align-self: center;
 }
 
 .blue {
-    /* order: 1; */
-    background-color: blue;
-    /* flex-grow: 0; */
-    /* para reducir un poco mas el espacio que ocupa */
-    /* flex-shrink: 0; */
-    align-self: flex-end;
+  background-color: blue;
+  /* order: 1; */
+  /* flex-grow: 1; */
+  /* para reducir un poco mas el espacio que ocupa */
+  /* flex-shrink: 0; */
+  align-self: flex-end;
 }
 
 .orange {
-    /* order: 4; */
-    background-color: orange;
-    /* flex-grow: 4; */
+  background-color: orange;
+  /* order: 4; */
+  /* flex-grow: 2; */
+  /* flex-basis: 100%; */
+}
 
+#layout {
+  display: flex;
+  flex-direction: row;
+
+  /* par alinear el contenido horizontal */
+
+  /* justify-content: flex-start; */
+  /* justify-content: left; */
+  /* justify-content: flex-end; */
+  /* justify-content: right; */
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+
+  height: 600px;
+
+  /* alinear contenido vertical */
+
+  /* align-items: baseline; */
+  /* align-items: center; */
+  /* align-items: flex-start; */
+  /* align-items: flex-end; */
+
+  border: 3px solid black;
+  padding: 5px;
 }

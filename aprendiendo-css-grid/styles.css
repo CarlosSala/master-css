@@ -1,3 +1,5 @@
+/* grid incluye las dos dimensiones trabajando con columnas, filas, celdas y areas */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -8,225 +10,101 @@ body {
     text-align: center;
 }
 
-/* grid solo actua donde se le indique */
-.layout {
+h2 {
+    margin-top: 20px;
+    font-size: 14px;
+}
 
+/* grid solo actua donde se le indique, dentro del div o caja
+que sea layout, no actua sobre toda la pagina */
+.layout {
     width: 80%;
+    min-width: 300px;
     margin: 0px auto;
-    /* definir el contenedor de grid */
+    margin-top: 20px;
+    padding: 10px;
+    border: 3px solid orangered;
+    height: 600px;
+
+    /* se define el contenedor que trabajará con grid */
     display: grid;
 
     /* se definen dos columnas */
     /* grid-template-columns: calc(50% - 10px) calc(50% - 10px); */
+
+    /* se definen cuatro columnas */
     /* grid-template-columns: 25% 25% 25% 25%; */
+
+    /* otra forma de definir 4 columnas */
     /* grid-template-columns: repeat(4,25%); */
+
     /* otra forma de definir tamaños es usar fracciones  */
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(10, 1fr);
 
-    grid-template-rows: repeat(5, 1fr);
+    /* para definir filas necesita que el contenedor tenga una 
+    altura definida para crear las filas y distribuirlas */
+    grid-template-rows: repeat(10, 1fr);
 
+    /* grid-template-rows: 50% 25% 25%; */
+
+    /* grid-template-rows: 1fr 3fr 1fr; */
 
     /* espacio entre elementos grid */
     grid-gap: 10px;
-    padding: 10px;
-    border: 3px solid orangered;
 }
 
 .layout .caja {
     font-size: 20px;
     font-weight: bold;
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     border: 4px solid #222;
     background: gray;
+    
 }
 
 .layout .red {
-    /* para expandir una columna */
+    background-color: red;
+
+    /* para expandir una columna, desde la linea de inicio 
+    hasta la linea del final */
+
     /* grid-column-start: 1;
     grid-column-end: 3; */
-    grid-column: 1 / 4;
 
-    background-color: red;
+    /* tambien se puede usar grid-column */
+
+    grid-column: 1 / 11;
 }
 
 .layout .green {
     background-color: green;
-    grid-row: 2 / 6;
+
+    /* expandir filas */
+    grid-row: 2 / 11;
 }
 
 .layout .blue {
     background-color: blue;
-    grid-column: 2 / 4;
+    grid-column: 2 / 11;
+    grid-row: 2 / 4 ;
 }
 
 .layout .pink {
     background-color: pink;
-    grid-row: 3 / 5;
-    grid-column: 2 / 3;
+    grid-column: 7 / 11;
+    grid-row: 4 / 9;
 }
 
 .layout .orange {
     background-color: orange;
-    grid-row: 3 / 5;
+    grid-column: 2 / 7;
+    grid-row: 4 / 9;
 }
 
 .layout .lightblue {
     background-color: lightblue;
-    grid-column: 2 / 4;
-}
-
-
-/* ----------------------- Ejercicio original ------------------------- */
-
-#website {
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(4, 1fr); */
-    grid-template-rows: 150px 70px 1fr 70px;
-
-    width: 75%;
-    height: 1000px;
-    margin: 0px auto;
-    border: 1px solid #ccc;
-}
-
-#cabecera {
-
-    grid-column: 1 / 6;
-    background-color: blue;
-    color: white;
-
-    /* centrar el contenido de la caja */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#menu {
-    grid-column: 1 / 6;
-    background-color: lightblue;
-    color: black;
-    line-height: 70px;
-}
-
-#menu ul {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    list-style: none;
-}
-
-#contenido {
-    grid-column: 1 / 5;
-    /* grid dentro de otro grid */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding: 20px;
-
-    background: #eee;
-}
-
-#contenido article {
-    background: #ccc;
-    border: 1px solid #555;
-
-}
-
-#lateral {
-    grid-column: 5 / 5;
-    grid-row: 3 / 4;
-    background: orange;
-    color: white;
-}
-
-#pie-pagina {
-    grid-column: 1 / 6;
-    background-color: black;
-    color: white;
-}
-
-
-/* ----------------------- Ejercicio con areas ------------------------- */
-
-#website2 {
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(4, 1fr); */
-    grid-template-rows: 150px 70px 1fr 70px;
-
-    /* distribucion de areas */
-    grid-template-areas:
-    "cabecera cabecera cabecera cabecera cabecera"
-    "menu menu menu menu menu"
-    "contenido contenido contenido contenido lateral"
-    "pie pie pie pie pie";
-
-    /* gap: 20px; */
-    /* column-gap: 25px; */
-    /* row-gap: 25px; */
-
-    width: 75%;
-    height: 1000px;
-    margin: 0px auto;
-    border: 1px solid #ccc;
-}
-
-#cabecera2 {
-    /* identificador de area */
-    grid-area: cabecera;
-   
-    background-color: blue;
-    color: white;
-
-    /* centrar el contenido de la caja */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#menu2 {
-    grid-area: menu;
-    background-color: lightblue;
-    color: black;
-    line-height: 70px;
-}
-
-#menu2 ul {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    list-style: none;
-}
-
-#contenido2 {
-   grid-area: contenido;
-    /* grid dentro de otro grid */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding: 20px;
-
-    background: #eee;
-}
-
-#contenido2 article {
-    background: #ccc;
-    border: 1px solid #555;
-
-}
-
-#lateral2 {
-    grid-area: lateral;
-    
-    background: orange;
-    color: white;
-}
-
-#pie-pagina2 {
-    grid-area: pie;
-    background-color: black;
-    color: white;
+    grid-column: 2 / 11;
+    grid-row: 9 / 11;
 }

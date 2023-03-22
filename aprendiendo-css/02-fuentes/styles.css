@@ -1,39 +1,39 @@
- @font-face {
-     font-family: MonserratFontCustom;
-     src: url(fonts/Montserrat/Montserrat-Regular.ttf);
- }
+/* para cargar una font externa */
+@font-face {
+  font-family: MonserratFontCustom;
+  src: url(fonts/Montserrat/Montserrat-Regular.ttf);
+}
 
- h1 {
-     /* font-family: Arial, Helvetica, sans-serif; */
+h1 {
+  /* font-family: Arial, Helvetica, sans-serif; */
 
-     font-weight: lighter;
-     font-family: 'Montserrat', MonserratFontCustom;
-     text-transform: uppercase;
+  font-weight: lighter;
+  font-family: MonserratFontCustom;
+  text-transform: uppercase;
 
-    /* colores */
-    
-    /* colores del sistema */
-    color: mediumaquamarine;
+  /* colores */
 
-    /* colores hexadecimales */
-    color: #cccccc;
+  /* colores del sistema */
+  color: mediumaquamarine;
 
-    /* colores rgb */
-    color: rgb(51, 104, 219);
+  /* colores hexadecimales */
+  color: #cccccc;
 
-    /* colores rgba */
-    color: rgba(151, 125, 10, 0.788);
+  /* colores rgb */
+  color: rgb(51, 104, 219);
 
- }
+  /* colores rgba */
+  color: rgba(151, 125, 10, 0.788);
+}
 
- h3 {
-     font-family: "Comic Sans MS";
-     font-size: 20px;
-     font-style: italic;
- }
+h3 {
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+  font-style: italic;
+}
 
- p {
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-     font-size: 18px;
-     font-weight: bold;
- }
+p {
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}

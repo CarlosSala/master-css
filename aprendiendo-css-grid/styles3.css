@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+/* ----------------------- Ejercicio con areas ------------------------- */
+
+#website2 {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 150px 70px 1fr 70px;
+
+    /* distribucion de areas */
+    grid-template-areas:
+        "cabecera cabecera cabecera cabecera cabecera"
+        "menu menu menu menu menu"
+        "contenido contenido contenido contenido lateral"
+        "pie pie pie pie pie";
+
+    /* gap: 20px; */
+    /* column-gap: 25px; */
+    /* row-gap: 25px; */
+
+    width: 75%;
+    height: 100vh;
+    margin: 0px auto;
+    border: 1px solid #ccc;
+}
+
+#cabecera2 {
+    background-color: blue;
+    color: white;
+
+    /* identificador de area */
+    grid-area: cabecera;
+
+    /* centrar el contenido de la caja */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu2 {
+    grid-area: menu;
+
+    background-color: lightblue;
+    color: black;
+    line-height: 70px;
+}
+
+#menu2 ul {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    list-style: none;
+}
+
+#contenido2 {
+    grid-area: contenido;
+
+    /* grid dentro de otro grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px;
+    background: #eee;
+}
+
+#contenido2 article {
+    background: #ccc;
+    border: 1px solid #555;
+}
+
+#lateral2 {
+    grid-area: lateral;
+
+    background: orange;
+    color: white;
+}
+
+#pie-pagina2 {
+    grid-area: pie;
+    
+    background-color: black;
+    color: white;
+}

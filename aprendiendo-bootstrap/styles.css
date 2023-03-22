@@ -1,83 +1,77 @@
-#menu {
-    height: 50px;
-}
-
-#menu ul {
-    text-decoration: none;
-    list-style: none;
-    line-height: 50px;
-}
-
-.item {
-    height: 150px;
-}
-
-footer {
-    height: 50px;
-    line-height: 50px;
-}
-
-.lateral {
-    height: 350px;
-}
-
-.cuadros-lateral {
-    /* height: calc(90px / 3); */
-    height: 90px;
-}
-
-/* // Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    #menu {
-        height: auto;
-    }
+ * {
+     /* border: 1px solid black; */
+     margin: 0px;
+     padding: 0px;
  }
 
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    aside h2 {
-        font-size: 17px;
-    }
+ .menu {
+     height: 50px;
+ }
 
-    aside div {
-        font-size: 13px;
-    }
+ .menu ul li {
+     line-height: 45px;
+ }
 
-    #menu {
-        height: auto;
-    }
+ .item {
+     height: 100px;
+ }
 
-}
+ .lateral {
+     height: 350px;
+ }
 
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    aside h2 {
-        font-size: 24px;
-    }
+ .cuadros-lateral {
+     /* height: calc(90px / 3); */
+     height: 60px;
+ }
 
-    .cuadros-lateral{
-        font-size: 22px;
-    }
-}
+ footer {
+     height: 50px;
+     line-height: 50px;
+ }
 
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-    .cuadros-lateral {
-        font-size: 13px;
-    }
-}
+ /* Extra small devices (portrait phones, less than 576px) */
 
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { }
+ @media (max-width: 575.98px) {
+     .menu {
+         height: auto;
+     }
+ }
 
 
-/* slider en componentes.hmtl */
+ /* // Small devices (landscape phones, 576px and up) */
+ @media (min-width: 576px) and (max-width: 767.98px) {
+     aside h2 {
+         font-size: 17px;
+     }
 
-#slider{
-    height: 450px;
-    overflow: hidden;
-}
+     aside div {
+         font-size: 13px;
+     }
 
-#slider img {
-    height: 450px;
-}
+     #menu {
+         height: auto;
+     }
+
+ }
+
+ /* // Medium devices (tablets, 768px and up) */
+ @media (min-width: 768px) and (max-width: 991.98px) {
+     aside h2 {
+         font-size: 24px;
+     }
+
+     .cuadros-lateral {
+         font-size: 12px;
+     }
+ }
+
+ /* // Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) and (max-width: 1199.98px) {
+     .cuadros-lateral {
+         font-size: 12px;
+     }
+ }
+
+ /* // Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1200px) {}

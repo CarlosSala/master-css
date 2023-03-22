@@ -2,7 +2,7 @@
 
 -las hojas css se leen de arriba a abajo
 -y predomina el ultimo estilo aplicado a un elemento
--el selector id esta pensado para un unido elemento
+-el selector id esta pensado para un unico elemento
 -el selector clase esta pensado para mas de un elemento
 -el estilo con mas especificidad tiene mas prioridad y
 no importa la ubicacion que tenga en la hoja de estilos,
@@ -12,77 +12,90 @@ esto no aplica si se utiliza !important
 /* selector universal */
 
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* margin: 0px;
-    padding: 0px; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+  padding: 5px;
+  /* border: 1px solid black; */
 }
 
 /* selector de etiqueta */
-a {
-    color: chartreuse;
+
+h1,
+h2 {
+  color: blueviolet;
+  background: aqua;
 }
 
-footer a {
-    color: coral;
+h1 {
+  background: #ccc !important;
+}
+
+a {
+  color: chartreuse;
 }
 
 /* selector de id */
 
 #descripcion {
-
-    border: 5px solid coral;
-    padding: 10px;
+  border: 5px solid lime;
+  padding: 10px;
 }
 
 /* selector de clase */
 
-.parrafo{
-    border: 5px solid blue;
-    font-style: italic;
-    font-weight: bold;
+.parrafo {
+  border: 5px solid blue;
+  font-style: italic;
+  font-size: small;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .parrafo1 {
-    background: pink;
+  background: pink;
 }
 
 /* selector de atributo */
 
 #usuario form {
-    border: 5px solid green;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 20px;
+  width: 25%;
+  min-width: 330px;
+  border: 5px solid green;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
 }
 
- form * {
-    display: block;
-}
+/* form {
+  display: block;
+} */
 
 input[type="text"] {
-    margin-bottom: 15px;
-    padding: 10px;
-    width:300px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 300px;
 }
 
 input[type="submit"] {
-    background:green;
-    color: white;
-    font-size: 15px;
-    padding: 10px 10px;
-    cursor: pointer;
+  background: green;
+  color: white;
+  font-size: 15px;
+  padding: 10px 10px;
+  cursor: pointer;
 }
 
 /* selector hijo  */
-#menu > li > a{
-    color: red;
+#menu > li > a {
+  color: red;
 }
 
 /* prioridad  */
-#saludo h1 {
-    background: seagreen;
+#usuario label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-h1 {
-    background: purple !important;
+footer a {
+  color: coral;
 }

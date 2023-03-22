@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+/* ----------------------- Ejercicio original ------------------------- */
+
+#website {
+
+    width: 80%;
+    height: 100vh;
+    margin: 0px auto;
+    border: 1px solid #ccc;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template-rows: 150px 70px 1fr 70px;
+}
+
+#cabecera {
+
+    background-color: blue;
+    color: white;
+
+    /* centrar el contenido de la caja horizontal y verticalmente*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1 / 6;
+}
+
+#menu {
+    background-color: lightblue;
+    color: black;
+    line-height: 70px;
+
+    grid-column: 1 / 6;
+}
+
+#menu ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+}
+
+#contenido {
+    padding: 20px;
+    background: #eee;
+
+    grid-column: 1 / 5;
+
+    /* grid dentro de otro grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#contenido article {
+    background: #ccc;
+    border: 1px solid #555;
+}
+
+#lateral {
+    background: orange;
+    color: white;
+
+    grid-column: 5 / 5;
+    grid-row: 3 / 4;
+}
+
+#pie-pagina {
+    background-color: black;
+    color: white;
+
+    grid-column: 1 / 6;
+}

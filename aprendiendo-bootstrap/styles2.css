@@ -1,0 +1,8 @@
+#my_slider {
+    height: 450px;
+    /* overflow: hidden; */
+}
+
+#my_slider img {
+    height: 450px;
+}

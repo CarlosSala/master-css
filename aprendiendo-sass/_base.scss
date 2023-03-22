@@ -1,73 +1,127 @@
 // Variables
-$fuente-tipica: sans-serif,
-Helvetica,
-Arial;
+
+$fuente-tipica: sans-serif, Helvetica, Arial;
 $color-fondo: #ccc;
-$color-secundario: rgb(102, 33, 33);
+$color-secundario: rgb(255, 87, 51);
 
 // Uso de variables
+
 body {
-    background-color: $color-fondo;
+    background: $color-fondo;
 }
 
 h1 {
     font-family: $fuente-tipica;
     color: $color-secundario;
+    text-align: center;
 }
 
 // Anidacion
-.caja {
 
-    border: 1px solid black;
+.caja {
     width: 500px;
     margin: 0px auto;
     text-align: center;
     background-color: white;
+    margin-bottom: 25px;
 
     h1 {
-        color: blue;
+        color: blueviolet;
     }
 
     p {
         color: green;
+        text-transform: uppercase;
     }
 
     .info {
-        font-size: 10px;
+        font-size: 15px;
 
         .author {
-            font-size: 15px;
-            color: orange;
+            font-size: 18px;
+            color: lightblue;
+            font-weight: bold;
+            font-style: italic;
         }
     }
 }
 
 // Mixins / funciones
-@mixin crearBordes($color, $size, $shadow) {
 
-    border: $size solid $color;
+@mixin crearBordes($border-color, $size, $shadow-color) {
+
+    border: $size solid $border-color;
     border-radius: $size;
-    box-shadow: 0px 0px $size $shadow;
+    box-shadow: 0px 0px $size $shadow-color;
 }
 
 .caja {
-    @include crearBordes(red, 10px, black);
+    @include crearBordes(red, 8px, black);
 }
 
 .listado {
-    @include crearBordes(green, 20px, yellow);
+    @include crearBordes(green, 15px, yellow);
+    width: 60%;
+    margin: 0px auto;
 }
 
-// Herencia
+
+// Condicionales 
+
+$nuevo-color-fondo: cyan;
+
+h2 {
+    @if $nuevo-color-fondo==cyan {
+        color: gold;
+    }
+
+    @else if $nuevo-color-fondo==black {
+        color: blue;
+    }
+
+    @else {
+        color: lightblue;
+    }
+}
+
+// Operadores
+
+h2 {
+    font-size: 40px + 5px - 20px;
+}
+
+// calc para hacer la división
+.caja {
+    // width: calc(480px / 1920px) * 100%;
+    width: calc((480px * 100%) / 1920px);
+}
+
+
+// For 
+// para un estilo diferente a cada elemento de la lista
+
+$contador : 1;
+
+@for $contador from 1 through 10 {
+    .listado ul li:nth-child(#{$contador}) {
+        font-size: $contador + 10px * 2;
+        color: palevioletred;
+    }
+}
+
+// Herencia, las clases hijas heredan las propiedades definidas aqui
+
 %alert-normal {
     border: 1px solid gray;
     background: #eee;
     color: gray;
     padding: 10px;
-    width: 80%;
-    margin: 20px;
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 20px;
 }
 
+// clases hijas
 .alert {
     @extend %alert-normal;
 }
@@ -83,43 +137,6 @@ h1 {
     color: green;
     border-color: green;
 }
-
-// Operadores
-h1 {
-    font-size: 20px + 5px - 1px;
-}
-
-.caja {
-    width: 500px / 1920px * 100%;
-}
-
-// Condicionales 
-$color-fondo:black;
-
-h1 {
-    @if $color-fondo==#ccc {
-        color: black;
-    }
-
-    @else if $color-fondo==black {
-        color: lightcoral;
-    }
-
-    @else {
-        color: lightgreen;
-    }
-}
-
-// For 
-$contador : 1;
-
-@for $contador from 1 through 10 {
-    .listado ul li:nth-child(#{$contador}) {
-        font-size: $contador + 10px * 2;
-        color: yellow;
-    }
-}
-
 
 // Each
 
