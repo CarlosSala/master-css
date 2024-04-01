@@ -1,0 +1,8 @@
+receta diseño responsivo con float, media queries y porcentajes
+
+
+-primero diseñar un sitio estatico
+-los contenedores principales deben tener anchos fijos, los elementos interiores no necesariamente
+-la responsividad se agrega al final al sitio estatico terminado (en otra hoja de estilos)
+-el elemento clave en los sitios responsivos son los anchos en porcentajes
+-el tamaño de letras se van ajustando al igual que si es necesario flotar elementos
